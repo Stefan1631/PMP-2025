@@ -65,7 +65,7 @@ for (i,j) in model.edges():
     values = []
     for xi in [0, 1]:
         for xj in[0,1]:
-            values.append(math.exp(-(xi-xj) ** 2))
+            values.append(math.exp((-(xi-xj)) ** 2))
     factori.append(DiscreteFactor([i,j], [2,2], values))
 
 #adaugam factorii
@@ -76,6 +76,7 @@ nx.draw(model, with_labels=True, pos=pos, alpha=0.5, node_size=2000)
 plt.show()
 
 print(model.check_model())
+
 
 
 
